@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/login",
+    "pages/database/database",
+    "pages/test/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTitleText": "",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {},
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "scissor_paper_stone",
+  "compilerVersion": "1.9.3"
+}

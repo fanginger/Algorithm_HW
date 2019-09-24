@@ -1,0 +1,8 @@
+<import src="/components/uni-countdown/uni-countdown.vue.wxml" />
+<import src="/components/uni-popup/uni-popup.vue.wxml" />
+<import src="/common/slots.wxml" />
+
+<template name="36fcdc2e-default-36fcdc2e-2-+index"><scroll-view class="_scroll-view 36fcdc2e uni-center center-box" scroll-y="true"><view wx:key="index" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" class="_view 36fcdc2e">我的自不見了 {{ list[index] }}</view></scroll-view></template>
+
+<template name="36fcdc2e-default-36fcdc2e-3-+index"><scroll-view class="_scroll-view 36fcdc2e uni-center center-box" scroll-y="true"><view wx:key="index" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item" class="_view 36fcdc2e">我的自不見了 {{ list[index] }}</view></scroll-view></template>
+
