@@ -39,3 +39,31 @@ def catWalk(code):
 #再來用join每一個字後面新增一個空格。
 
 ```
+
+
+## 替換(題目14)
+使用語法：`replace()`
+
+str.replace(old, new[, max])
+- old 要被替換的
+- new 心得
+- max 最多不能替換多少格
+
+範例：
+```python=
+str = "this is string example....wow!!! this is really string";
+print str.replace("is", "was");
+print str.replace("is", "was", 3);
+
+#thwas was string example....wow!!! thwas was really string
+#thwas was string example....wow!!! thwas is really string
+
+```
+
+題目回答：
+```python=
+def convertTabs(code, x):
+    return code.replace('\t'," " * x)
+
+#要轉換的是'\t' 換成 ' '乘幾個x
+```
