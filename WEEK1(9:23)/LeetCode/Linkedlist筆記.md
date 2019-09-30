@@ -23,9 +23,11 @@
     - len
         - 說出現在長度，在各方面很好使用
 
-## 新增刪除
+## 新增刪除取值
+
 新增：addAtHead、addAtTail、addAtIndex
 刪除：deleteAtIndex
+取值：get
 
 ### addAtHead
 ok，先來想想接入頭部要如何去加入呢？
@@ -53,8 +55,14 @@ def addAtHead(self, val: int) -> None:
 ```
 ### addAtTail
 
+
+>attail我的想法是找出最尾端的再把要新增的加進去
+>
 ![](https://i.imgur.com/thJRQed.png)
 
+條件式分為
+- self.head後面是空的
+- 後面不是空的，就得找出最尾端
 
 ```python=
  def addAtTail(self, val: int) -> None:
@@ -66,9 +74,104 @@ def addAtHead(self, val: int) -> None:
             curr = self.head
             while curr:
                 if curr.next != None:
+                #如果curr.next下一個是空的就代表現在已經是最尾巴
                     curr = curr.next
                 else:
+                #現在的curr已經是最尾巴所以把next指向現在要加入的node return!!
                     curr.next = node
                     return
+
+```
+
+
+### addAtIndex
+
+>找出現在index-1的node將他的next加入新的node，再把新的node的next指向原本接的
+
+![](https://i.imgur.com/VAdgWmi.png)
+
+
+條件式分為
+- index為負，加入到最前
+- index為正值，找出curr等於index-1的
+    - 找出事不是大於len
+
+```python=
+def addAtIndex(self, index: int, val: int) -> None:
+        node = Node(val)
+        curr = self.head
+        index -=1
+        if index<0:
+                self.addAtHead(node)
+        else:
+            if curr ==None:
+                return     
+            else:
+                 for i in range(0,index):
+                    # curr = curr.next
+                    if curr == None:
+                        return
+                    else:
+                        curr = curr.next
+            tmp = curr.next
+            curr.next = node
+            node.next = tmp
+
+```
+
+## deleteAtIndex
+![](https://i.imgur.com/C2OA8o0.png)
+
+條件式分為
+- index為負，直接回
+- index為正
+    - index ==0就改掉self.head接的頭
+    - 慢慢找到curr==index-1的node再來跳過那個值
+```python=
+def deleteAtIndex(self, index: int) -> None:
+        if index<0:
+            return
+        else:
+            curr = self.head
+            len = 0
+            if index == 0:
+                self.head =self.head.next
+            else:
+                while curr:
+                    if index-1 == len:
+                        if curr.next == None:
+                            return
+                        else:
+                            curr.next=curr.next.next
+                            return 
+                    else:
+                        curr = curr.next
+                        len += 1
+
+```
+
+
+### get
+
+條件式分為
+- index為負，直接回-1
+- index為正
+    - 慢慢找出index == len的值
+    - 超過長度回-1
+```python=
+ def get(self, index: int) -> int:
+        if index < 0 :
+            return -1
+        else:
+            curr = self.head
+            len = 0
+            while curr:
+                if index == len:
+                    return curr.val
+                else:
+                    curr = curr.next
+                    len += 1
+            return -1 
+
 
 ```
