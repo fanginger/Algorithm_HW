@@ -32,6 +32,8 @@ class MyLinkedList:
                     len += 1
             return -1 
 
+       
+
     def addAtHead(self, val: int) -> None:
         """
         Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
@@ -107,4 +109,4 @@ class MyLinkedList:
                     else:
                         curr = curr.next
                         len += 1
-          
+
