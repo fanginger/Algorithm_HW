@@ -27,20 +27,4 @@
 
 
 
-Learning Timeline
----
-```mermaid
-gantt
-    title Learning
-
-    section ALGO
-    Linkedlist    :a1, 2019-09-16, 14d
-    Queue,stack   : a2, after a1  , 7d
-    QuickSort :after a2,11d
-    
-    
-    section CS50
-    Week1      :2019-10-10  , 7d
-    
-```
 
