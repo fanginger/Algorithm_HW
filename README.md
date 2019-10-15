@@ -19,6 +19,7 @@
 - Week5(10/7)
     - Sort(insertion and quick)
     - [HW_QuickSort](https://github.com/fanginger/Algorithm_HW/blob/master/WEEK5/HW_QuickSort%20.ipynb)
+    - [GitHub打不開ipy原因以及說明]()
 
 ## What will be in here?
 - Weekly Hw
