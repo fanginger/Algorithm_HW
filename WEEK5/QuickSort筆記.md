@@ -1,17 +1,40 @@
 # Quick Sort
+## 前言
+
+
+![](https://i.imgur.com/r8HQm8p.png)
+
+best 就是最好的情況
+->比較qucik sort 和 insertion sort 因為insertion可以跑一次就可以跑完全部
+大部分比較都是average 或是 worst
 
 ## 想法概念
->選擇一個pivot將其大於的數字放置右邊成為一個新的list，將小於的數字放置左邊，也成為新的list。
+
+
+
+
+選擇一個pivot點，然後依序將剩餘的數字排列
+pivot的選擇可以是任意的，我是選擇最後一個
+
+
+![](https://i.imgur.com/MstZ21N.png)
+
+
+>將其大於pivot的數字放置右邊成為一個新的list，將小於的數字放置左邊，也成為新的list。
 重複上述步驟，直到分不出來就停下。(遞迴觀念)
 
-pivot的選擇可以是任意的。
+![](https://i.imgur.com/kyMwXNX.png)
 
 
+## 程式架構
 
-## Partition 分類
+![](https://i.imgur.com/GDGMrVO.png)
 
 
-### 定義變數
+### Partition 分類
+
+
+#### 定義變數
 在`partition function`裡面
 - `int front`代表每組list的最前頭，一開始初始為0
 - `int end`代表最後一個，同時也是pivot位置，一開始為len(list)-1
@@ -53,7 +76,7 @@ def partition(self,mylist,front,end):
 
 ![](https://i.imgur.com/he9wHEv.png)
 
-### j <pivot時
+#### j <pivot時
 
 現在第一個點3<4：
 所以進行
@@ -68,7 +91,7 @@ def partition(self,mylist,front,end):
 再來交換j和ｉ值因為j代表現在所指的位置，所以要交換
 最後j再加一前進
 
-### j > pivot時
+#### j > pivot時
 ![](https://i.imgur.com/WafHeGZ.png)
 現在第二個點8>4
 
@@ -79,7 +102,7 @@ def partition(self,mylist,front,end):
 直接j+=1因為也不需要變動到什麼改變什麼位置
 因為j都是代表比pivot還要大的值
 
-### 到最尾巴 j = pivot時
+#### 到最尾巴 j = pivot時
 
 ![](https://i.imgur.com/y5l52Dd.png)
 ```python=
@@ -100,6 +123,11 @@ self.sortList(mylist,pivot+1,end)
             #右邊的list pivot的後一個到最尾巴
 
 ```
+
+
+### 使用工具
+畫流程圖：https://www.draw.io
+手繪亂亂的：aww
 
 
 
