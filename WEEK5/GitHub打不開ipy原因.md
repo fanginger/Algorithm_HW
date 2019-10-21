@@ -1,5 +1,6 @@
+
 ## Sorry, something went wrong. Reload?" when viewing *.ipynb ??
->我就有時候要看一下自己的檔案是不是上傳成功就會有時候遇到這個問題
+>我有時候從Github打開就會跑出需要Reload這行。所以才寫這篇筆記
 >
 ![](https://i.imgur.com/oeEWk6O.png)
 
