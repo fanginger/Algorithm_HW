@@ -29,7 +29,13 @@ class Solution(object):
  
 
 
-list_test = [8,2,3,1,2,2,7,4,2,-1,33,22,100]
+import random
+import numpy as np
+x = np.random.randint(1,1000,10000)
+#隨機生成數字
+list_test = x.tolist()
+#轉換成list
+# list_test = [8,2,3,1,2,2,7,4,2,-1,33,22,100]
 # sol = Solution()
 
 ans = Solution().heap_sort(list_test)
