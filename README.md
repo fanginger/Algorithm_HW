@@ -17,6 +17,7 @@
 - Week9(11/4)
     - [Sort(merge and heap)](https://github.com/fanginger/Algorithm_HW/tree/master/WEEK8)
     - merge and heap 比較
+    - CS50 WEEK 5(HTTP)
 - Week10(11/11)
     - Binary Search Tree
 ## What will be in here?
