@@ -32,12 +32,23 @@ class Solution(object):
 import random
 import numpy as np
 x = np.random.randint(1,1000,10000)
-#隨機生成數字
-list_test = x.tolist()
+# #隨機生成數字
+# list_test = x.tolist()
 #轉換成list
-# list_test = [8,2,3,1,2,2,7,4,2,-1,33,22,100]
-# sol = Solution()
+list_test = [8,2,3,1,2,2,7,4,2,-1,33,22,100]
+sol = Solution()
 
 ans = Solution().heap_sort(list_test)
 
 print(ans)
+
+
+list_test2 = [2,13,125,22,12,0,3]
+
+
+sol = Solution()
+
+ans2 = Solution().heap_sort(list_test2)
+
+print(ans2)
+
