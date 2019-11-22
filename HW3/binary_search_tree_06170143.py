@@ -68,26 +68,24 @@ class Solution(object):
                 root = None
                 return None
 
-            if root.left is None : 
-                temp = root.right  
-                root = None 
-                return temp  
+            if root.left == None : 
+                return root.right  
                 
-            if root.right is None : 
-                temp = root.left  
-                root = None
-                return temp 
+            if root.right == None : 
+                return root.left  
     
             else:
                 temp = root.left
-                while root.left:
-                    temp = temp.left
+                while temp.right:
+                    temp = temp.right
        
                 root.val = temp.val 
 
-                root.right = self.delete_2(root.right , temp.val) 
+                root.left = self.delete_2(root.left , temp.val)
 
+                return root 
         return root  
+    
     
     def modify(self, root, target, new_val):
         """
@@ -162,3 +160,4 @@ class Solution(object):
                         return node
         root.val = node.val
         return root
+

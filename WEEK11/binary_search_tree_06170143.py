@@ -68,15 +68,11 @@ class Solution(object):
                 root = None
                 return None
 
-            if root.left is None : 
-                temp = root.right  
-                root = None 
-                return temp  
+            if root.left == None : 
+                return root.right  
                 
-            if root.right is None : 
-                temp = root.left  
-                root = None
-                return temp 
+            if root.right == None : 
+                return root.left  
     
             else:
                 temp = root.left
