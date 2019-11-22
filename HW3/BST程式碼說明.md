@@ -105,6 +105,8 @@ def insertest(self, root, val):
 ```
 
 ## 查詢
+
+全部程式碼解釋
 ```python
 def search(self,root,target):
         if root:# 先看root存在嗎？不存在就可以直接回傳None
