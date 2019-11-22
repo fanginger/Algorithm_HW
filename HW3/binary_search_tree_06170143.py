@@ -15,8 +15,7 @@ class Solution(object):
         :type val: int
         :rtype: TreeNode(inserted node)
         """
-        # root 為node 
-        # self.root = root
+
         self.clean(root)
         return self.insertest(root,val)
 
@@ -106,11 +105,9 @@ class Solution(object):
         
     def print(self,root,mylist):
         if root:
-            # print(root.val)
             mylist.append(root.val)
             self.print(root.left,mylist)
             self.print(root.right,mylist)
-        # print(mylist)
         return  mylist
 
     def printest(self,root):
@@ -161,3 +158,13 @@ class Solution(object):
         root.val = node.val
         return root
 
+"""
+參考資料
+
+[Tree系列文章](http://alrightchiu.github.io/SecondRound/mu-lu-yan-suan-fa-yu-zi-liao-jie-gou.html)他整理的真的很好，看了一下delete的觀念(因為我不是很懂)
+[Binary Search Tree | Set 2 (Delete)](https://www.geeksforgeeks.org/binary-search-tree-set-2-delete/) 看了他的delete 因為在寫case3時會遇到問題，所後看了一下，還是跟遞迴是有關聯的。所以之後可能再次複習遞迴或是多加練習。
+[youtube影片](https://www.youtube.com/watch?v=pYT9F8_LFTM)再次建立delete觀念
+與朋友討論整理這部分要怎麼寫，討論時間約10分鐘。最後他提醒我要用pointer的想法，因為我那時候就是想說可以使用等號就可以把整顆樹複製過去，但是這樣會產生一個問題，就是我是建立一顆新的樹。所以他給我的建議是要用pointer。無程式碼上面的實質幫助。
+[pointer的概念](https://michaelchen.tech/c-programming/pointer/)
+
+"""

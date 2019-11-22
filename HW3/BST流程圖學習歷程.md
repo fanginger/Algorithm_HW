@@ -1,5 +1,5 @@
-\# Binaray Search Tree
-分為主要
+# Binaray Search Tree 流程圖、學習歷程
+作業分為主要
 - insert 
 - delelte
 - search
@@ -84,6 +84,9 @@ while target != cur.val:
 
 一開始錯誤的程式碼，一開始我是想先找到那個點
 但是點是指上一個點，這樣的話就可以把上一個點指派給下下一個
+
+
+原本一開始錯誤的程式碼
 ```python
 cur = self.root
 while target != cur.right.val or target != cur.left.val:
