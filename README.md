@@ -1,9 +1,9 @@
 
 # Algorithm_HW
 
-### Hi!My name is Ginger.Nice to meet you.:rabbit: 
+> Hi! My name is Ginger.Nice to meet you.:satisfied: 
 
-## Weekly HW :custard: 
+## Weekly HW  :zap: 
 - Week3(9/23)
     - [Linkedlist以及在LeetCode的練習](https://github.com/fanginger/Algorithm_HW/blob/master/WEEK3/LeetCode/707-linkedlist)
     - [Codesignal](https://github.com/fanginger/Algorithm_HW/blob/master/WEEK3/WEEK3-Codesignal.md)
@@ -19,15 +19,17 @@
     - [merge and heap 比較](https://github.com/fanginger/Algorithm_HW/blob/master/WEEK9/%E6%AF%94%E8%BC%83merge_sort%E5%92%8Cheap_sort.md)
     - [CS50 WEEK 5(HTTP)](https://github.com/fanginger/Algorithm_HW/blob/master/WEEK9/CS50WEEK5-HTTP.md)
 - Week10(11/11)
-    - Binary Search Tree
     - [CS50 WEEK7 (Ajax)](https://github.com/fanginger/Algorithm_HW/blob/master/WEEK10/CS50WEEK7_Ajax.md)
     - [關於conda以及pip](https://github.com/fanginger/Algorithm_HW/blob/master/WEEK10/%E9%97%9C%E6%96%BCconda.md)
+- Week11(11/18)
+    - [Binary Search Tree](https://github.com/fanginger/Algorithm_HW/tree/master/WEEK11)
+    - Python OOP note
 ## What will be in here?
 - Weekly Hw
 - 演算法筆記
 - CS50筆記
 - Git使用筆記
-- 關於Python一些問題
+- [關於Python一些問題](https://github.com/fanginger/python) 我把它移轉到這裡
 
 
 
