@@ -8,7 +8,7 @@ class ListNode:
         :rtype: None        
         """
 class MyHashSet:
-    def __init__(self, capacity=5):
+    def __init__(self, capacity=3):
         self.capacity = capacity
         self.data = [None] * capacity
         """
@@ -24,7 +24,7 @@ class MyHashSet:
         h.update(key.encode('utf-8'))
         x = int(h.hexdigest(),16)
         # 轉換為10進位
-        put_to = x%5
+        put_to = x%3
         # print(x%5)
         node = ListNode(key)
         if self.data[put_to]:
@@ -51,34 +51,17 @@ class MyHashSet:
         if self.find(key) == None:
             return 
         else:
-            if self.find(key).next != None:
-                cur = cur.next 
-                return 
-            else:
-                cur = self.find(key)
-                cur.val = None
-                # self.find(key).val = None
-                return
-            # cur = self.find(key)
-            # cur = cur.next 
-            # return 
-            # for i in range(0,self.capacity):
-            #     root = self.data[i]
-            #     if root:
-            #         cur = root
-            #         while cur:
-            #             if cur.val == key:
-            #                 cur = cur.next
-            #                 return cur
-            #             elif cur.next != None:
-            #                 cur = cur.next
-            #             elif cur.next == None:
-            #                 break
-            #         else:
-            #             pass
-                
-            #     return None
-        
+            while self.find(key) != None:
+                if self.find(key).next != None:
+                    cur = self.find(key)
+                    cur.val = cur.next.val
+                    cur.next = cur.next.next
+                    
+                else:
+                    cur = self.find(key)
+                    cur.val = None
+                    
+            return
     def contains(self, key):
         """
         :type key: str
@@ -120,9 +103,9 @@ myhash.add('pig')
 # myhash.add('pgig')
 # myhash.add('psig')
 # myhash.add('pisg')
-# myhash.add('piag')
-# myhash.add('piaag')
-# myhash.add('piaaag')
+myhash.add('pig')
+myhash.add('piaag')
+myhash.add('piaaag')
 rel = myhash.contains('pig')
 print(rel)
 rel = myhash.contains('dog')

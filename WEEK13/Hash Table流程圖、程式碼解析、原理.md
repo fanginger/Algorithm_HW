@@ -1,11 +1,16 @@
-# Hash Table
+# Hash Table學習歷程、流程圖、程式碼解析
 
 
 ## Hash table(雜湊表，哈希表)原理
+根據鍵（Key）而直接查詢在內存存儲位置的資料結構。
+流程像是
+![](https://i.imgur.com/hF5bdON.png)
+輸入然後經過雜湊函式，得到經過加密後的值，依據得到的值加入對應欄位。
+
 ## Hash Function(雜湊函式) 原理
 >目的是：雜湊函式把訊息或資料壓縮成摘要，使得資料量變小，將資料的格式固定(長度...)下來。
-方法是：主要就像是下方的圖一樣，你輸入一個值後，經過Hash function 的轉換 就會轉變成一個新的雜湊值（hash values，hash codes，hash sums，或hashes）
-![](https://i.imgur.com/hF5bdON.png)
+方法是：你輸入一個值後，經過Hash function 的轉換 就會轉變成一個新的雜湊值（hash values，hash codes，hash sums，或hashes）
+
 
 
 通常你輸入不同的值進去，經過Hash function 後得到的雜湊值會是不一樣的。但是有例外，如雜湊碰撞（collision）。
@@ -27,6 +32,8 @@
 
 ## 流程圖與程式碼解析
 ### Add
+>在寫Add這段沒遇到太大困難，就是像是五個list裡面都是塞linked list 
+
 ![](https://i.imgur.com/JzzcIez.png)
 ```python
  def add(self, key):
@@ -42,9 +49,10 @@
         # print(x%5)
         node = ListNode(key)
         if self.data[put_to]:
-            #先找有沒有存在
-            # 開始找最尾巴
+            # 先找有沒有存在
+            # 接下來開始找最尾巴
             cur = self.data[put_to]
+            # 這邊幾乎都是使用linked list的概念
             while cur:
                 if cur.next != None:
                     cur = cur.next
@@ -59,25 +67,23 @@
 ```
 
 ### Find、Contain
+> find和contain我是用上一次作業BST的一些想法複製過來，所以寫也沒有很多問題
+
 ![](https://i.imgur.com/pDeViiG.png)
 ```python
-def remove(self, key):
+def contains(self, key):
         """
         :type key: str
-        :rtype: None
+        :rtype: bool(True or False)
         """
         if self.find(key) == None:
-            return 
+        # 利用自己建立的fin可以找出 那個node
+        # 所以找不到回傳None就代表沒有那個點
+            print(False)
+            return False
         else:
-            if self.find(key).next != None:
-                cur = cur.next 
-                return 
-            else:
-                cur = self.find(key)
-                cur.val = None
-                # self.find(key).val = None
-                return
-
+            print(True)
+            return True
 ```
 Find
 ```python
@@ -110,18 +116,36 @@ def remove(self, key):
         if self.find(key) == None:
             return 
         else:
-            if self.find(key).next != None:
-                cur = cur.next 
-                return 
-            else:
-                cur = self.find(key)
-                cur.val = None
-                # self.find(key).val = None
-                return
-
+            while self.find(key) != None:
+            # 因為可能會有一樣的key值所以跑迴圈一直檢查有沒有
+                if self.find(key).next != None:
+                # 後面有點所以把自己的值改為下一個，指向的點為下下個
+                    cur = self.find(key)
+                    cur.val = cur.next.val
+                    cur.next = cur.next.next
+                    
+                else:
+                #後面沒有node了，所以自己的值變為None
+                    cur = self.find(key)
+                    cur.val = None
+                    
+            return
 ```
 
 ## 學習歷程
+### 
+```python
+為什麼要寫成這樣
+cur = self.find(key)
+cur.val = cur.next.val
+cur.next = cur.next.next
+
+不能寫成
+cur = self.find(key)
+cur = cur.next
+#這樣不會更新到self本身
+
+```
 
 ### break、pass、continue
 途中有一部部分在find那邊遇到一個問題
@@ -146,8 +170,10 @@ for i in range(0,self.capacity):
 整理
 
 >break：強制跳出 ❮整個❯ 迴圈
-continue：強制跳出 ❮本次❯ 迴圈，繼續進入下一圈
-pass：不做任何事情，所有的程式都將繼續，一種中助詞
+>
+>continue：強制跳出 ❮本次❯ 迴圈，繼續進入下一圈
+>
+>pass：不做任何事情，所有的程式都將繼續，一種中助詞
 
 範例：
 ```python
@@ -172,5 +198,9 @@ hi
 
 ## Ref.
 [wiki-雜湊函式](https://zh.wikipedia.org/wiki/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B8)
+
 [wiki-MD5](https://zh.wikipedia.org/wiki/MD5)
+
+[8. Hashing with Chaining](https://www.youtube.com/watch?v=0M_kIqhwbFo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=8)
+
 [1 分鐘搞懂 Python 迴圈控制：break、continue、pass](https://medium.com/@chiayinchen/1-%E5%88%86%E9%90%98%E6%90%9E%E6%87%82-python-%E8%BF%B4%E5%9C%88%E6%8E%A7%E5%88%B6-break-continue-pass-be290cd1f9d8)
