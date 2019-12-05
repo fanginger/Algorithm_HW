@@ -24,6 +24,9 @@
 - Week11(11/18)
     - [Binary Search Tree](https://github.com/fanginger/Algorithm_HW/tree/master/WEEK11)
     - Python OOP note
+- Week12(11/25)
+- Week13(12/2)
+    - HashTable
 ## What will be in here?
 - Weekly Hw
 - 演算法筆記

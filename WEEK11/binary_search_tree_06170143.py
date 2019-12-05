@@ -168,3 +168,22 @@ class Solution(object):
 [pointer的概念](https://michaelchen.tech/c-programming/pointer/)
 
 """
+
+sol = Solution()
+node1 = TreeNode(None)
+node2 = TreeNode(7)
+node3 = TreeNode(12)
+node4 = TreeNode(3)
+node5 = TreeNode(3)
+node6 = TreeNode(2)
+node7 = TreeNode(15)
+
+sol.insert(node2,8)
+sol.insert(node2,8)
+sol.insert(node2,9)
+sol.insert(node2,10)
+sol.insert(node2,11)
+
+# sol.printest(node2)
+sol.delete(node2,8)
+sol.printest(node2)
