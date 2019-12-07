@@ -20,13 +20,14 @@ class MyHashSet:
         :type key: str
         :rtype: None
         """
+        from Crypto.Hash import MD5
         h = MD5.new()
         h.update(key.encode('utf-8'))
         x = int(h.hexdigest(),16)
 
         put_to = x%5
         # print(x%5)
-        node = ListNode(key)
+        node = ListNode(x)
         if self.data[put_to]:
             cur = self.data[put_to]
             while cur:
@@ -74,6 +75,13 @@ class MyHashSet:
 
 
     def find(self, target):
+        from Crypto.Hash import MD5
+        h = MD5.new()
+        h.update(target.encode('utf-8'))
+        target = int(h.hexdigest(),16)
+
+        
+
         for i in range(0,self.capacity):
             root = self.data[i]
             if root:
