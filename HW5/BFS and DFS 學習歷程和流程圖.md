@@ -35,8 +35,42 @@ def BFS(self, s):
             return None
 
 ```
-### DFS
+## DFS流程圖以及程式碼解析以及學習歷程
 >depth-first search 是以某一節點為出發點，不斷地前進拜訪未曾被拜訪過的節點， 直到無路可走或是所有相鄰的節點都已經拜訪過為止，然後再退回前一個節點，尋找 沒有拜訪過的節點，直到所有相鄰的節點都已被拜訪過。 因此，進行 depth-first search 時，需要使用 stack ，以便記錄所走過的路徑。
+>
+
+### 流程圖
+![](https://i.imgur.com/EJAUnGM.png)
+
+### 學習歷程
+一開始比起BFS卡比較久因為不太懂他的流程，最後是在看一次老師的youtube中是說一樣是把它放進temp(暫時)，然後只是是先刪除掉尾巴因為是stack的方法這樣。
+
+### 程式碼
+大致上都跟BFS一樣，只是一個是queue的概念一個是stack,DFS是stack所以在pop的部分就是刪掉尾巴這樣
+```python
+    def DFS(self, s):
+        temp = []    
+        cur = []
+        if self.graph[s]:
+            temp.append(s)
+            while temp:
+                add = temp.pop()
+                #和BFS不一樣的地方，是刪除尾巴
+                cur.append(add)
+                if self.find(add):
+                    i = self.find(add)
+                    for point in i:
+                        if point in temp or point in cur:
+                            pass
+                        else:
+                            temp.append(point)
+                else:
+                    pass
+            print(cur)
+            return cur
+        else:
+            return None
+```
 
 
 
@@ -47,3 +81,5 @@ def BFS(self, s):
 [橫向優先搜尋 (breadth-first search)](http://nthucad.cs.nthu.edu.tw/~yyliu/personal/nou/04ds/bfs.html)
 
 [老師moodle](https://docs.google.com/presentation/d/e/2PACX-1vTma_vOZyE70O23KWw4I4Y78aAaT5fJSTq7Mae912kCwka_u5ZMWPoo14D86-x-57kZPbb6hAGktSW4/pub?start=false&loop=false&delayms=3000&slide=id.g7aa022d8bc_2_5)
+
+[老師的youtube影片](https://www.youtube.com/watch?v=DBnB60IOiw8&feature=youtu.be)
